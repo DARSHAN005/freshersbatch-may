@@ -1,0 +1,84 @@
+*{
+    box-sizing: border-circle;
+}
+body{
+    font-family: 'Lucida Sans Regular'; 
+}
+/* Header styling*/
+header{
+    background-color: rgb(240, 114, 29);
+    padding: 30px;
+    text-align:center;
+    font-size:35px;
+    color:rgb(10, 1, 1);
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav{
+    float:left;
+    width:10%;
+    height:300px;
+    background: rgb(157, 196, 17);
+   
+    
+}
+nav-ul{
+    list-style-type:circle;
+    text-align: left;
+    padding: 50px;
+}
+article{
+    float:left;
+    
+}
+section::content{
+    content:"";
+    display:table;
+    clear:both;
+}
+p{
+    background-color: darkgray;
+    text-align:left;
+    width:50%;
+    font-size:15px;
+    color:white;
+    font-family:'Lucida Sans Regular';
+}
+
+form{
+    float: right;
+    height: 100%;
+    font-size: 120%;
+}
+marquee{
+    float:right;
+    background-color: rgb(29, 148, 78);
+    padding: 5px;
+    text-align:left;
+    width:50%;
+    font-size:25px;
+    color:white;
+    font-family:'Lucida Sans Regular';
+
+}
+
+
+footer{
+    margin: 100px;
+    margin-left: 0px;
+    margin-right: 0px;
+
+    background-color:grey;
+    padding:10px;
+    text-align: center;
+    color:white;
+}
+
+/*Respomsive layout makes the two columns/boxes stack on top of each other instead of 
+next to each other, on small screens 
+@media(max-width:800px){
+    nav,article{
+        width:100%;
+        height:auto;
+    }
+}*/

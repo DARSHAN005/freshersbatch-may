@@ -1,0 +1,321 @@
+git config --global user.name -------->set a name that is identifiable for credit when review version history
+
+git config --global user.email -------->set an email address that will be associated with each history marker
+
+git init-------------->initialize an existing directory as a Git repository
+
+git status------------>show modified files in working directory, staged for your next commit
+
+git add [file]--------->add a file as it looks now to your next commit (stage)
+
+git reset [file]----------->unstage a file while retaining the changes in working directory
+
+git commit -m “[descriptive message]”---------->commit your staged content as a new commit snapshot
+
+git branch----------->list your branches. a * will appear next to the currently active branch
+
+git branch [branch-name]------------------>create a new branch at the current commit
+
+git checkout--------------->switch to another branch and check it out into your working directory
+
+git merge [branch]----------->merge the specified branch’s history into the current one
+
+git log------------->show all commits in the current branch’s history
+
+
+
+
+DELL@DESKTOP-IOHJATF MINGW64 ~
+$ cd Assignments
+
+DELL@DESKTOP-IOHJATF MINGW64 ~/Assignments (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    README.txt
+        deleted:    conditional.js
+        deleted:    contact.js
+        deleted:    form.html
+        deleted:    form2.html
+        deleted:    form3.html
+        deleted:    info.txt
+        deleted:    sty.css
+        deleted:    style.css
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Assignment/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+DELL@DESKTOP-IOHJATF MINGW64 ~/Assignments (master)
+$ git add .
+
+DELL@DESKTOP-IOHJATF MINGW64 ~/Assignments (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        renamed:    README.txt -> Assignment/README.txt
+        renamed:    conditional.js -> Assignment/conditional.js
+        renamed:    contact.js -> Assignment/contact.js
+        renamed:    form.html -> Assignment/form.html
+        renamed:    form2.html -> Assignment/form2.html
+        renamed:    form3.html -> Assignment/form3.html
+        renamed:    info.txt -> Assignment/info.txt
+        renamed:    sty.css -> Assignment/sty.css
+        renamed:    style.css -> Assignment/style.css
+
+
+DELL@DESKTOP-IOHJATF MINGW64 ~/Assignments (master)
+$ git commit -m "all files moved to assignment folder"
+[master ebe6eca] all files moved to assignment folder
+ 9 files changed, 0 insertions(+), 0 deletions(-)
+ rename README.txt => Assignment/README.txt (100%)
+ rename conditional.js => Assignment/conditional.js (100%)
+ rename contact.js => Assignment/contact.js (100%)
+ rename form.html => Assignment/form.html (100%)
+ rename form2.html => Assignment/form2.html (100%)
+ rename form3.html => Assignment/form3.html (100%)
+ rename info.txt => Assignment/info.txt (100%)
+ rename sty.css => Assignment/sty.css (100%)
+ rename style.css => Assignment/style.css (100%)
+
+DELL@DESKTOP-IOHJATF MINGW64 ~/Assignments (master)
+$ git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+
+DELL@DESKTOP-IOHJATF MINGW64 ~/Assignments (master)
+$ git push origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (1/1), done.
+Writing objects: 100% (2/2), 259 bytes | 86.00 KiB/s, done.
+Total 2 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/DARSHAN005/freshersbatch-may.git
+   bbc0529..ebe6eca  master -> master
+
+DELL@DESKTOP-IOHJATF MINGW64 ~/Assignments (master)
+$ git add .
+
+DELL@DESKTOP-IOHJATF MINGW64 ~/Assignments (master)
+$ git commit -m "renamed folder to git assignments"
+[master a9923f1] renamed folder to git assignments
+ 9 files changed, 0 insertions(+), 0 deletions(-)
+ rename {Assignment => Git-Assignment}/README.txt (100%)
+ rename {Assignment => Git-Assignment}/conditional.js (100%)
+ rename {Assignment => Git-Assignment}/contact.js (100%)
+ rename {Assignment => Git-Assignment}/form.html (100%)
+ rename {Assignment => Git-Assignment}/form2.html (100%)
+ rename {Assignment => Git-Assignment}/form3.html (100%)
+ rename {Assignment => Git-Assignment}/info.txt (100%)
+ rename {Assignment => Git-Assignment}/sty.css (100%)
+ rename {Assignment => Git-Assignment}/style.css (100%)
+
+DELL@DESKTOP-IOHJATF MINGW64 ~/Assignments (master)
+$ git push origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (2/2), 261 bytes | 37.00 KiB/s, done.
+Total 2 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/DARSHAN005/freshersbatch-may.git
+   ebe6eca..a9923f1  master -> master
+
+DELL@DESKTOP-IOHJATF MINGW64 ~/Assignments (master)
+$
+
+
+
+
+========================================================================
+git log 
+
+
+DELL@DESKTOP-IOHJATF MINGW64 ~/Assignments (master)
+$ git log
+commit a9923f1f9e541aa40478885a33a3679b3e8d227d (HEAD -> master, origin/master)
+Author: DARSHAN005 <darshanv346@gmail.com>
+Date:   Tue May 17 16:10:37 2022 +0530
+
+    renamed folder to git assignments
+
+commit ebe6ecaff0bffbef17fbba1b6dc0449d3191ae97
+Author: DARSHAN005 <darshanv346@gmail.com>
+Date:   Tue May 17 16:06:37 2022 +0530
+
+    all files moved to assignment folder
+
+commit bbc0529190e2eec54b42650123dadad7d9657375
+Merge: 13e0c4d f3b6f9d
+Author: DARSHAN005 <darshanv346@gmail.com>
+Date:   Sun May 15 22:17:46 2022 +0530
+
+    Merge branch 'js-assignments'
+
+    merging js assignments branch
+
+commit f3b6f9dfb03f6a10b72fe2123f40eb13f46b5f98
+Author: DARSHAN005 <darshanv346@gmail.com>
+Date:   Sun May 15 22:17:12 2022 +0530
+
+    changed in contact.js
+
+commit 13e0c4dcac4fd985e558f0c0df935bbdbbcc2569
+Author: DARSHAN005 <darshanv346@gmail.com>
+Date:   Sun May 15 22:15:04 2022 +0530
+
+    changed in readme in master branch
+
+commit b2a36724286e2e71d1bc564860a224f58c80edfc
+Author: DARSHAN005 <darshanv346@gmail.com>
+Date:   Sun May 15 22:13:05 2022 +0530
+
+    changed in readme
+
+commit bef935c6594360b4eabf198eaaf317d3176a7e13
+Author: DARSHAN005 <darshanv346@gmail.com>
+Date:   Sun May 15 22:11:37 2022 +0530
+
+    js assignments added
+
+commit c6e61b808daf17830d214c54615ef01276926a43
+Merge: 7143e7a 4b4d175
+Author: DARSHAN005 <darshanv346@gmail.com>
+Date:   Sun May 15 22:00:54 2022 +0530
+
+    Merge branch 'css-assignments'
+    merging css asignments branch
+
+commit 4b4d175cd0730606f39f3276c78a29169c028314
+Author: DARSHAN005 <darshanv346@gmail.com>
+Date:   Sun May 15 22:00:21 2022 +0530
+
+    changed box into circle in sty.css file
+
+commit 7143e7a96a09422daa526aade1cf7410bc0fab8e
+Author: DARSHAN005 <darshanv346@gmail.com>
+Date:   Sun May 15 21:58:34 2022 +0530
+
+    changed third line in readme file
+
+commit aa18673e167b7b4c2586b722a81565cd5495bdb9
+Author: DARSHAN005 <darshanv346@gmail.com>
+Date:   Sun May 15 21:55:51 2022 +0530
+
+    chnaged first line
+
+commit e75a527d7a4bee62ea261203c47ef6d039864ea4
+Author: DARSHAN005 <darshanv346@gmail.com>
+Date:   Sun May 15 21:54:02 2022 +0530
+
+    style assignments added
+
+commit 88a5818a027c25e394a3d0d5e26235689d4826b2
+Merge: f5c9c71 9af6d1c
+Author: DARSHAN005 <darshanv346@gmail.com>
+Date:   Sun May 15 21:33:54 2022 +0530
+
+    Merge branch 'html-assignments'
+
+    merging html branch to master branch
+
+commit 9af6d1ccbd155637da062333a30f6e6e63785fb7
+Author: DARSHAN005 <darshanv346@gmail.com>
+Date:   Sun May 15 21:32:57 2022 +0530
+
+    added git 2 head title in form.html
+
+commit f5c9c71c21206e909515ba4799d15794139e11ba
+Author: DARSHAN005 <darshanv346@gmail.com>
+Date:   Sun May 15 21:30:24 2022 +0530
+
+    first change in readme file
+
+commit c6fd72f4487d52b046bc1677c50668f0ccba616b
+Author: DARSHAN005 <darshanv346@gmail.com>
+Date:   Sun May 15 21:28:04 2022 +0530
+
+    modified form.html with git title
+
+commit 4064a823abec8ba9f71d58d9c77bc82a29bafc0a
+Author: DARSHAN005 <darshanv346@gmail.com>
+Date:   Sun May 15 21:26:42 2022 +0530
+
+    Html branch assignments
+
+commit 9fd9e6d946a724ddf0779d2386b30c62583d8eea
+Author: DARSHAN005 <darshanv346@gmail.com>
+Date:   Sun May 15 21:12:35 2022 +0530
+
+    commiting Readme file
+(END)
+commit f5c9c71c21206e909515ba4799d15794139e11ba
+Author: DARSHAN005 <darshanv346@gmail.com>
+Date:   Sun May 15 21:30:24 2022 +0530
+
+    first change in readme file
+
+commit c6fd72f4487d52b046bc1677c50668f0ccba616b
+Author: DARSHAN005 <darshanv346@gmail.com>
+Date:   Sun May 15 21:28:04 2022 +0530
+
+    modified form.html with git title
+
+commit 4064a823abec8ba9f71d58d9c77bc82a29bafc0a
+Author: DARSHAN005 <darshanv346@gmail.com>
+Date:   Sun May 15 21:26:42 2022 +0530
+
+    Html branch assignments
+
+commit 9fd9e6d946a724ddf0779d2386b30c62583d8eea
+Author: DARSHAN005 <darshanv346@gmail.com>
+Date:   Sun May 15 21:12:35 2022 +0530
+
+    commiting Readme file
+(END)
+
+
+
+=====================================================================================================================
+
+questions on git branch and merge ?
+
+ 1. What do you understand about the Git merge conflict?
+A Git merge conflict is an event that occurs when Git is unable to resolve the differences in code between the two commits automatically. 
+
+Git is capable of automatically merging the changes only if the commits are on different lines or branches.
+---------------------------------------------------------------------------------------------
+
+2. How is Git merge different from Git rebase?
+.Git merge is used to incorporate new commits into your feature branch.
+ .Git merge creates an extra merge commit every time you need to incorporate changes.
+  .It pollutes your feature branch history.
+
+
+As an alternative to merging, you can rebase the feature branch into master.
+
+
+
+.Git rebase Incorporates all the new commits in the master branch.
+.It rewrites the project history by creating brand new commits for each commit in the original branch
+----------------------------------------------------------------------------------------------------
+3.How can you discover if a branch has already been merged or not?
+There are two commands to determine these two different things.
+
+git branch --merged - Returns the list of branches that have been merged into the current branch.
+
+git branch --no-merged - Returns the list of branches that have not been merged.
+
+-------------------------------------------------------------------------------------------------------
+
+4.What is the command used to delete a branch?
+To delete a branch we can simply use the command git branch –d [head].
+To delete a branch locally, we can simply run the command: git branch -d <local_branch_name>
+To delete a branch remotely, run the command: git push origin --delete <remote_branch_name>
